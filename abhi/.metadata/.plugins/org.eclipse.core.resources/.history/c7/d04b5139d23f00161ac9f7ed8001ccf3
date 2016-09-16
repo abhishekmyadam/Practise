@@ -1,0 +1,36 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class Dem {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+	try{
+	//register driver//
+		Class.forName("com.mysql.jdbc.Driver");
+		
+		try{
+			//establish connection//
+		
+			Connection con=DriverManager.getConnection("jdbc:mysql://mysql-cluster.cluster-cfmqmbihkw5i.us-west-2.rds.amazonaws.com:3306/Training","root","12345678");
+		System.out.println(con);
+		//Create Statement//
+		
+		Statement stmt=con.createStatement();
+		
+		
+		
+		
+		}
+		
+		
+		catch{
+			
+		}
+		
+
+	}
+
+}

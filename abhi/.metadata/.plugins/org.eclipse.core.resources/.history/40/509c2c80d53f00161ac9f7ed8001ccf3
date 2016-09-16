@@ -1,0 +1,41 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class Dem {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+
+		try {
+			//register driver
+			Class.forName("com.mysql.jdbc.Driver");
+			
+			try {
+				//establish connection
+				Connection con=DriverManager.getConnection("jdbc:mysql://mysql-cluster.cluster-cfmqmbihkw5i.us-west-2.rds.amazonaws.com:3306/Training", "root", "12345678");
+				
+				System.out.println(con);
+				//create statement
+				Statement stmt=con.createStatement();
+				//execute statemtn
+				stmt.executeUpdate("create table pay(id int,amount varchar(222))");
+				//close connection
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+
+	}
+
+}
